@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-7 mrgnbtm">
+        <h2>Stock Search</h2>
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+          
+            <div class="input-group col-md-11">
+                <input type="text" class="form-control" formControlName="stockTicker" id="company" placeholder="Enter stock ticker symbol" [formControl]="searchBox" [(ngModel)]="searchValue" matInput [matAutocomplete]="auto">
+                 <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of options; let i = index" [value]="option">
+                    {{ option }} | {{ comp_name[i] }}
+                  </mat-option>
+                </mat-autocomplete>
+                <!-- <span class="input-group-append">
+                    <button class="btn btn-outline-secondary bg-white border-start-0 border rounded-pill ms-n3" type="submit">
+                      <i class="bi bi-search"></i>
+                    </button> border-left-0 border-right-0 rounded-0 rounded-right
+                </span> -->
+              <span class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">
+                <i class="bi bi-search"></i>
+                </button>
+              </span>
+              <span class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" (click)="clearSearch()">
+                    <i class="bi bi-x"></i>
+              </button>
+              </span>
+            </div>
+          
+        </form>
+        <div *ngIf="alertEmpty">
+          <ngb-alert type="danger" [dismissible]="true">Please enter a valid ticker</ngb-alert>
+        </div>
+        <div *ngIf="alertNoData">
+          <ngb-alert type="danger" [dismissible]="true">No data found. Please enter a valid Ticker</ngb-alert>
+        </div>
+      </div>
+    </div>
+</div>

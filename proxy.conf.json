@@ -1,0 +1,6 @@
+{
+    "/stock": {
+      "target": "http://localhost:3080",
+      "secure": false
+    }
+}

@@ -1,0 +1,288 @@
+<app-stocksearch [ticker1]="stockTicker" (newItemEvent)="clearDiv($event)"></app-stocksearch>
+<!-- <div *ngIf="loaderService.isLoading | async" class="loader-container">
+  <mat-spinner style="top: 50%; left: 50%;"></mat-spinner>
+</div> -->
+<div *ngIf = "display">
+  <div class="container" *ngIf="comp_details">
+    <div class="row justify-content-md-center">
+      <div class="col">
+          <div class="row">
+            {{ comp_details.ticker }}
+            <ng-template [ngIf]="true && checkWishList()" [ngIfElse]="notFound">
+              <div>
+                <button class="btn" type="submit" (click)="removeFromWishList()">
+                  <i class="bi bi-star-fill yellow-color"></i>
+                </button>
+              </div>
+            </ng-template>
+            
+            <ng-template #notFound>
+              <button class="btn" type="submit" (click)="wishList()">
+                <i class="bi bi-star"></i>
+              </button>
+            </ng-template>
+          </div>
+          <div class="row">
+            {{ comp_details.name }}
+          </div>
+          <div class="row">
+            {{ comp_details.exchange }}
+          </div>
+          <button type="button" class="btn btn-primary" (click)="open(buystock)">Buy</button>
+          <ng-template #buystock let-modal>
+              <div class="modal-header">
+                <div>
+                  <h3 class="modal-title" id="modal-basic-title">{{ comp_details.ticker }} {{ comp_details.name }}</h3>
+                </div>
+                <button class="btn btn-outline-secondary" type="button" (click)="modal.dismiss('Cross click')">
+                  <i class="bi bi-x"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <div class="mb-3">
+                    <h5>Current Price: {{ stock_price.c }}</h5>
+                    <h5>Money in  Wallet: ${{ cwallet }}</h5>
+                    <input type="number" min="0" step="1" (change)="quantityChange($event)">  
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <p>{{ totalPrice }}</p>
+                <button type="button" class="btn btn-success" (click)="onBuy()">Buy</button>
+              </div>
+          </ng-template>
+          <div *ngIf="stockInPf">
+            <button type="button" class="btn btn-danger" (click)="open(sellstock)">Sell</button>
+            <ng-template #sellstock let-modal>
+              <div class="modal-header">
+                <div>
+                  <h3 class="modal-title" id="modal-basic-title">{{ comp_details.name }}</h3>
+                </div>
+                <button class="btn btn-outline-secondary" type="button" (click)="modal.dismiss('Cross click')">
+                  <i class="bi bi-x"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <div class="mb-3">
+                    <h5>Current Price: {{ stock_price.c }}</h5>
+                    <h5>Money in  Wallet: $</h5>
+                    <input type="number" [formControl]="qtySelect" class="form-control" formControlName="quantity" min="0" step="1">
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-green" (click)="onSell()">Close</button>
+              </div>
+          </ng-template>
+          </div>
+          
+      </div>
+      <div class="col">
+        <img src="{{ comp_details.logo }}" width="75px" height="75px">
+      </div>
+      <div class="col" *ngIf="stock_price">
+        <div class="row">
+            {{ stock_price.c }}
+          </div>
+          <div class="row">
+            {{ stock_price.d }}
+          </div>
+          <div class="row">
+            {{ stock_price.dp }}
+          </div>
+          <div class="row">
+            {{ stock_price.t }}
+          </div>
+      </div>
+    </div>
+    <div>
+        <mat-tab-group>
+            <mat-tab label="Summary"> 
+                <div class=" container row justify-content-md-center">
+                    <div class="col-md-5" *ngIf="stock_price">
+                        <div class="row">
+                            <div class="col">
+                                <div>
+                                    High Price: {{ stock_price.h }}
+                                </div>
+                                <div>
+                                    Low Price: {{ stock_price.l }}
+                                </div>
+                                <div>
+                                    Open Price: {{ stock_price.o }}
+                                </div>
+                                <div>
+                                    Prev. Close: {{ stock_price.pc }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div>
+                                    <h3><u>About the Company</u></h3>
+                                </div>
+                                <div>
+                                    IPO Start Date: {{ comp_details.ipo }}
+                                </div>
+                                <div>
+                                    Industry: {{ comp_details.finnhubIndustry }}
+                                </div>
+                                <div>
+                                    Webpage: <a href="{{ comp_details.weburl }}">{{ comp_details.weburl }}</a> 
+                                </div>
+                                <div>
+                                    Company peers: <br>
+                                    {{ peers }}
+                                </div>                            
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                      <highcharts-chart
+                          [Highcharts] = "highcharts" 
+                          [options] = "chartOptions1"
+                        >
+                      </highcharts-chart>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Top News"> 
+                <div *ngFor='let n of news; let i = index'>
+                  <div *ngIf="i % 2 == 0" class="row">
+                    <div class="col">
+                        <div class="card"  style="max-width: 350px;" (click)="open(content)">
+                          <div class="row g-0">
+                            <div class="col-xs-1">
+                              <img src="{{ news[i].image }}" class="img-fluid rounded-start" alt="..." style="max-width: 150px; max-height: 150px; ">
+                            </div>
+                            <div class="col-md-7">
+                              <div class="card-body">
+                                <h5 class="card-title">{{ news[i].headline }}</h5>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      <ng-template #content let-modal>
+                          <div class="modal-header">
+                            <div>
+                              <h2 class="modal-title" id="modal-basic-title">{{ news[i].source }}<br></h2>
+                              <h5>{{ news[i].datetime }}</h5>
+                            </div>
+                            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                          </div>
+                          <div class="modal-body">
+                              <div class="mb-3">
+                                <h3>{{ news[i].headline }}</h3>
+                                <h6>{{ news[i].summary }}</h6>
+                                <h6>For more details click <a href="{{ n.url }}" target="_blank">here</a></h6>
+                              </div>
+                              <!-- <div class="card" style="max-width: 250px;">
+                                <div class="card-body">
+                                  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="{{ news[i].headline }}" data-url="{{ news[i].url }}" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                </div>
+                              </div> -->
+                          </div>
+                      </ng-template>
+                    </div>
+
+                    <div *ngIf='i+1 < news.length' class="col">
+                      <div class="card"  style="max-width: 350px;" (click)="open(content)">
+                        <div class="row g-0">
+                          <div class="col-xs-1">
+                            <img src="{{ news[i+1].image }}" class="img-fluid rounded-start" alt="..." style="max-width: 150px; max-height: 150px; ">
+                          </div>
+                          <div class="col-md-7">
+                            <div class="card-body">
+                              <h5 class="card-title">{{ news[i+1].headline }}</h5>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <ng-template #content let-modal>
+                        <div class="modal-header">
+                          <div>
+                            <h2 class="modal-title" id="modal-basic-title">{{ news[i+1].source }}<br></h2>
+                            <h5>{{ news[i+1].datetime }}</h5>
+                          </div>
+                          <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                              <h3>{{ news[i+1].headline }}</h3>
+                              <h6>{{ news[i+1].summary }}</h6>
+                              <h6>For more details click <a href="{{ news[i+1].url }}" target="_blank">here</a></h6>
+                            </div>
+                            <!-- <div class="card" style="max-width: 250px;">
+                              <div class="card-body">
+                                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="{{ news[i+1].headline }}" data-url="{{ news[i+1].url }}" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                              </div>
+                            </div> -->
+                        </div>
+                    </ng-template>
+                  </div>
+                  </div>
+                </div>
+                
+            </mat-tab>
+            <mat-tab label="Charts"> 
+              <div class="container mainchart">
+                <div col-md-7>
+                  <highcharts-chart
+                  [Highcharts] = "highcharts" 
+                  [options] = "chartOptionsMain"
+                  style="width: 100%;">
+                </highcharts-chart>
+                </div>
+                
+              </div>
+            </mat-tab>
+            <mat-tab label="Insights"> 
+              <div class="container">
+                <div class="row">
+                  <table class="table table-striped">
+                    <thead>
+                    <tr>
+                      <th scope="col">{{ comp_details.name }}</th>
+                      <th scope="col">Reddit</th>
+                      <th scope="col">Twitter</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>Total Mentions</td>
+                      <td>{{ rdt[0] }}</td>
+                      <td>{{ twtr[0] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Positive Mentions</td>
+                      <td>{{ rdt[1] }}</td>
+                      <td>{{ twtr[1] }}</td>
+                    </tr>
+                    <tr>
+                      <td>Negative Mentions</td>
+                      <td>{{ rdt[2] }}</td>
+                      <td>{{ twtr[2] }}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <highcharts-chart
+                      [Highcharts] = "highcharts" 
+                      [options] = "chartOptionsRec">
+                    </highcharts-chart>
+                  </div>
+                  <div class="col-md-5">
+                    <highcharts-chart
+                      [Highcharts] = "highcharts" 
+                      [options] = "chartOptionsExp">
+                    </highcharts-chart>
+                  </div>
+                </div>
+              </div>
+              
+            </mat-tab>
+          </mat-tab-group>
+    </div>
+  </div>
+  
+</div>
