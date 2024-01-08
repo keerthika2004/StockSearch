@@ -5,15 +5,22 @@ This project consists of the following components:
    The user can search for the stocks and can select a valid ticker.
    <img width="716" alt="Screenshot 2024-01-08 at 5 49 14 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/85108b74-6dca-467c-9e6b-fe3e11ec35d1">
    <img width="716" alt="Screenshot 2024-01-08 at 5 49 38 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/2f08ace0-4915-497f-b75d-824142709082">
+
+   
 2) Details page:
    After the user clicks the search button, the page will be redirected to a new page where the user can see the details. The user can check whether the company's market is closed or open, trading exchange, summary, top news, charts.
+   
 <img width="707" alt="Screenshot 2024-01-08 at 5 55 54 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/68a92dcc-9ac9-40eb-94ab-4dca4d797ccd">
+
 <img width="707" alt="Screenshot 2024-01-08 at 5 56 17 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/54c2899e-a9f1-4e2f-a313-01490dc6fd68">
+
 When the user clicks the star button, the white star will turn yellow. 
 When the user clicks buy button, a window will be opened which will display stock symbol, current price, quantity of shares to buy and total price for the shares. The button will be enabled only if the user enter the quantity greater than 0.
 
 <img width="707" alt="Screenshot 2024-01-08 at 6 02 57 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/462dc24a-9546-4fba-a92f-dc8585b89f03">
 <img width="707" alt="Screenshot 2024-01-08 at 6 03 14 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/6dde734c-0349-47dc-a0ef-6a3722fe05e4">
+
+
 The details page contains 2 tabs:
 1)Stock details
 2)Materials tab: 
@@ -25,11 +32,13 @@ The details page contains 2 tabs:
 -> Charts tab:
 <img width="707" alt="Screenshot 2024-01-08 at 6 11 14 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/ae524831-683e-4b2f-bd51-a3548ade5e14">
 
+
 3) Watchlist menu:
 This menu will display all the stocks that are added to the watchlist by the user.
 <img width="707" alt="Screenshot 2024-01-08 at 6 15 20 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/67ed28f9-817a-4374-bc93-afb1c961c0d2">
 If the watchlist is empty, then this should look like this:
 <img width="707" alt="Screenshot 2024-01-08 at 6 16 45 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/434bc545-9037-4d1f-88bd-0e194610aa41">
+
 
 4) Portfolio menu:
    This menu will display all the stocks that have been bought by the user
