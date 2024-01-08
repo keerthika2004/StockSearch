@@ -1,13 +1,13 @@
-#STOCK SEARCH
+<h1>STOCK SEARCH</h1>
 
-This project consists of the following components:
-1) Home page:
+<h2>This project consists of the following components:<h2>
+<h2>1) Home page:</h2>
    The user can search for the stocks and can select a valid ticker.
    <img width="716" alt="Screenshot 2024-01-08 at 5 49 14 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/85108b74-6dca-467c-9e6b-fe3e11ec35d1">
    <img width="716" alt="Screenshot 2024-01-08 at 5 49 38 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/2f08ace0-4915-497f-b75d-824142709082">
 
    
-2) Details page:
+<h2>2) Details page:</h2>
    <p>After the user clicks the search button, the page will be redirected to a new page where the user can see the details. The user can 
    check whether the company's market is closed or open, trading exchange, summary, top news, charts.</p>
    
@@ -35,14 +35,14 @@ The details page contains 2 tabs:<br>
 <img width="707" alt="Screenshot 2024-01-08 at 6 11 14 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/ae524831-683e-4b2f-bd51-a3548ade5e14">
 <br></p>
 
-3) Watchlist menu:
+<h2>3) Watchlist menu:</h2>
 <p>This menu will display all the stocks that are added to the watchlist by the user.</p><br>
 <img width="707" alt="Screenshot 2024-01-08 at 6 15 20 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/67ed28f9-817a-4374-bc93-afb1c961c0d2"><br>
 <p>If the watchlist is empty, then this should look like this:</p><br>
 <img width="707" alt="Screenshot 2024-01-08 at 6 16 45 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/434bc545-9037-4d1f-88bd-0e194610aa41">
 
 
-4) Portfolio menu:<br>
+<h2>4) Portfolio menu:</h2><br>
    <p>This menu will display all the stocks that have been bought by the user.</p><br>
    <img width="707" alt="Screenshot 2024-01-08 at 6 19 14 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/c2de0732-cd9d-4be6-b325-13956aa86c37"><br>
    <img width="707" alt="Screenshot 2024-01-08 at 6 19 53 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/57dc8b19-a01d-4988-a9fc-6e4984cc758c"><br>
@@ -53,21 +53,21 @@ The details page contains 2 tabs:<br>
    <p>If the input for the quantity is invalid, then the sell button won't work.</p><br>
    <img width="707" alt="Screenshot 2024-01-08 at 6 22 39 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/f444f522-0725-4318-b415-7934e5c12006">
 <br>
-###This web application is also responsive!!!###
-
-<img width="221" alt="Screenshot 2024-01-08 at 6 25 22 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/d2628c24-8df3-48ce-8d45-8cb91d4eb7f4">
-<img width="221" alt="Screenshot 2024-01-08 at 6 26 17 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/8768f327-add2-4979-9278-bf8b18ff3dc6">
-<img width="221" alt="Screenshot 2024-01-08 at 6 26 30 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/5ca844bb-c978-4760-84e3-31bf52c1fc9c">
-<img width="221" alt="Screenshot 2024-01-08 at 6 26 51 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/0926340d-edec-433c-906f-8aa1d967fa8b">
-<img width="221" alt="Screenshot 2024-01-08 at 6 27 11 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/7868d8f2-49ad-47a4-a4ae-50b406926260">
-<img width="221" alt="Screenshot 2024-01-08 at 6 27 25 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/950f2a86-1fe9-488e-9b16-875eac7dbf67">
-<img width="221" alt="Screenshot 2024-01-08 at 6 27 56 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/463bac13-1601-4874-8431-420c05c53785">
-<img width="221" alt="Screenshot 2024-01-08 at 6 28 18 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/7a350ba9-fc7b-4484-b761-35a262479c7b">
-<img width="221" alt="Screenshot 2024-01-08 at 6 28 44 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/f9561032-95e5-40c5-a29a-33ae0890e5c2">
-<img width="221" alt="Screenshot 2024-01-08 at 6 29 01 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/2820d99d-fdd2-455a-af1e-c51edf243aca">
-<img width="221" alt="Screenshot 2024-01-08 at 6 29 17 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/b4589a3d-12cd-44b7-84f2-c7ea5203e05a">
-<img width="221" alt="Screenshot 2024-01-08 at 6 29 33 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/e9be9c63-2072-4ea2-9ec5-525ad3ea357a">
-<img width="221" alt="Screenshot 2024-01-08 at 6 29 45 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/0c0b1eb2-f1d7-47da-ad31-e99d74fb859f">
+<h2>###This web application is also responsive!!!###</h2>
+<br>
+<img width="221" alt="Screenshot 2024-01-08 at 6 25 22 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/d2628c24-8df3-48ce-8d45-8cb91d4eb7f4"><br>
+<img width="221" alt="Screenshot 2024-01-08 at 6 26 17 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/8768f327-add2-4979-9278-bf8b18ff3dc6"><br>
+<img width="221" alt="Screenshot 2024-01-08 at 6 26 30 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/5ca844bb-c978-4760-84e3-31bf52c1fc9c"><br>
+<img width="221" alt="Screenshot 2024-01-08 at 6 26 51 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/0926340d-edec-433c-906f-8aa1d967fa8b"><br>
+<img width="221" alt="Screenshot 2024-01-08 at 6 27 11 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/7868d8f2-49ad-47a4-a4ae-50b406926260"><br>
+<img width="221" alt="Screenshot 2024-01-08 at 6 27 25 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/950f2a86-1fe9-488e-9b16-875eac7dbf67"><br>
+<img width="221" alt="Screenshot 2024-01-08 at 6 27 56 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/463bac13-1601-4874-8431-420c05c53785"><br>
+<img width="221" alt="Screenshot 2024-01-08 at 6 28 18 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/7a350ba9-fc7b-4484-b761-35a262479c7b"><br>
+<img width="221" alt="Screenshot 2024-01-08 at 6 28 44 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/f9561032-95e5-40c5-a29a-33ae0890e5c2"><br>
+<img width="221" alt="Screenshot 2024-01-08 at 6 29 01 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/2820d99d-fdd2-455a-af1e-c51edf243aca"><br>
+<img width="221" alt="Screenshot 2024-01-08 at 6 29 17 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/b4589a3d-12cd-44b7-84f2-c7ea5203e05a"><br>
+<img width="221" alt="Screenshot 2024-01-08 at 6 29 33 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/e9be9c63-2072-4ea2-9ec5-525ad3ea357a"><br>
+<img width="221" alt="Screenshot 2024-01-08 at 6 29 45 PM" src="https://github.com/keerthika2004/StockSearch/assets/97329755/0c0b1eb2-f1d7-47da-ad31-e99d74fb859f"><br>
 
 
 
